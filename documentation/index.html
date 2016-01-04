@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Affiliate Pro Documenation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/navbar.css" rel="stylesheet">
+	<link href="assets/css/tree.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+<div class="container">
+
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="http://jdwebdesigner.com/affiliate-pro/assets/img/aplogo.png" style="width:150px;"></a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#integration">Integration</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#account">Default User Account</a></li>
+					<li><a href="#credits">Plugin Credits</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</nav>
+
+	<!-- Main component for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<h1>Documentation</h1>
+		<p>Thank you for your purchase of Affiliate Pro by JD Web Designer // http://jdwebdesigner.com. 
+			Affiliate Pro is based on Twitter Bootstrap 3.3.4 and follows bootstrap structure. 
+			Most of your questions regarding the style/look of Affiliate Pro can be answered by referring to the twitter boostrap documenation
+			at <a href="http://getbootstrap.com/">http://getbootstrap.com/</a>. Read below for information regarding Affiliate Installation, Integration, Features and Specifics.</p>
+
+	</div>
+
+	<hr>
+	<a name="requirements"></a>
+	<h2>Script Requirements</h2>
+
+	<p>Affiliate Pro requires the following in order to operate.  If you don't have any of these contact your hosting provider and they can usually activate it on your account</p>
+		<ul>
+			<li>PHP 5.3.0+ (may work with older versions)</li>
+			<li>Mysqli (the mysql improved extension)</li>
+			<li>Apache 1.3 or later for Mod_Rewrite</li>
+		</ul>
+	<hr>
+	<hr>
+	<a name="installation"></a>
+	<h2>Installation</h2>
+
+	<p>Installation is very easy, just follow these steps and you'll be up and running on your server in no time!  Installation is very simliar to most php/mysql applications.  
+		Upload, add database, and configure the config file.</p>
+		<ul>
+			<li>Step 1. Unzip downloaded file</li>
+			<li>Step 2. Upload contents of "upload" folder to your server</li>
+			<li>Step 3. Create a mysql user and database (recommend using mysql wizard in cpanel)</li>
+			<li>Step 4. Using a program like phpmyadmin import the included affiliatepro.sql file into your new database</li>
+			<li>Step 5. Open config.inc.php located in the "auth" folder</li>
+			<li>Step 6. Add in your database username, password and database name</li>
+			<li>Step 7. In the same file edit the line "$INSTALL_FOLDER = 'affiliate-pro';" ONLY if you've gotten tricky on us and changed the folder name.  If in root leave it empty.</li>
+			<li>Step 8. If necessary upload your modified config.inc.php file back to your server to save your changes</li>
+			<li>Step 9. Visit http://yourdomain.com/affiliate-pro and login with default account or create a new one (you will need to use default account initially to assign a new admin user).</li>
+			<p>
+				That's it, you should be up and running!
+			</p>
+		</ul>
+
+	<hr>
+	<h2>Upgrade from V1.5 to V1.6</h2>
+
+	<p>To update Affiliate pro from V1.5 to V1.6 follow these steps</p>
+		<ul>
+			<li>Step 1. Unzip downloaded file</li>
+			<li>Step 2. Upload "affiliate-pro" inside "UPGRADE V1.5 to V1.6" folder to your server</li>
+			<li>Step 3. Import the included Update V1.5 to V1.6.sql file to update your database </li>
+			<p>
+				That's it, you should good to go!
+			</p>
+		</ul>
+	
+	<hr>
+	<h2>Upgrade from V1.4 to V1.5</h2>
+
+	<p>To update Affiliate pro from V1.4 to V1.5 follow these steps</p>
+		<ul>
+			<li>Step 1. Unzip downloaded file</li>
+			<li>Step 2. Upload "affiliate-pro" inside "UPGRADE V1.4 to V1.5" folder to your server</li>
+			<li>No database updates required for this update!</li>
+			<p>
+				That's it, you should good to go!
+			</p>
+		</ul>
+	<hr>
+	<h2>Upgrade from V1.3 to V1.4</h2>
+
+	<p>To update Affiliate pro from V1.3 to V1.4 follow these steps</p>
+		<ul>
+			<li>Step 1. Unzip downloaded file</li>
+			<li>Step 2. Upload "affiliate-pro" inside "UPGRADE V1.3 to V1.4" folder to your server</li>
+			<li>Step 3. Import the included Update V1.3 to V1.4.sql file to update your database </li>
+			<p>
+				That's it, you should good to go!
+			</p>
+		</ul>
+	<hr>
+	<h2>Upgrade from V1.2 to V1.3</h2>
+
+	<p>To update Affiliate pro from V1.2 to V1.3 follow these steps</p>
+		<ul>
+			<li>Step 1. Unzip downloaded file</li>
+			<li>Step 2. Upload "affiliate-pro" inside "UPGRADE V1.2 to V1.3" folder to your server</li>
+			<li>Step 3. Import the included Update V1.2 to V1.2.sql file to update your database </li>
+			<p>
+				That's it, you should good to go!
+			</p>
+		</ul>
+
+	<hr>
+	<a name="integration"></a>
+	<h2>Website Integration</h2>
+	<p>
+		Integration into current php websites is very simple to do.  Integration instructions are also included when you login under "Integration and Settings"
+	</p>
+	<ul>
+		<li><b>Step 1.</b> - Include php tracking file on any page you wish to track (ie, home page)
+		<code><pre>include('affiliate-pro/controller/affiliate-tracking.php');</pre></code>
+		* File located in affiliate-pro/controller/affiliate-tracking by default.</li>
+		<br>
+		
+		<li><b>Step 2.</b> Once a sale has been completed (for example a thank you page) include the file to record the sale into Affiliate Pro.
+		<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br>include('affiliate-pro/controller/record-sale.php);</pre></code>
+		* File located in affiliate-pro/controller/record-sale by default</li>
+		<br>
+		
+		<li><b>Step 2b. (Alternative)</b> Use the included PayPal IPN <b>(controller/paypal-ipn.php)</b> sample file instead for additional sale confirmation security through PayPal Service.  You will most likely need to create a custom PayPal form and include a custom input to pass the affiliate ID.
+		<code><pre>&lt;input type="hidden" name="custom" value="&lt;?php echo $_COOKIE['ap_ref_tracking'];?&gt;"&gt;</pre></code>
+		</li>
+
+	</ul>
+	<h2>Recurring Commissions</h2>
+	<p>
+		To make a commission recurring add the two commission lines to your standard integration (step 2) from above
+	</p>
+	<ul>
+		<strong>Recurring commissions are initialized the same way fixed commissions are with the addition of the two recurring variables below: </strong>
+		<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br><strong>$recurring = 'monthly';</strong> //can be daily, weekly, biweekly, or monthly<br><strong>$recurring_fee = '10';</strong> //percentage of original sale<br>include('affiliate-pro/controller/record-sale.php);</pre></code>
+		<strong>Important: Recurring commissions requires you to setup the following cron job to work.</strong>
+		<code><pre>0  1  *  *  *  /usr/bin/php -q /home/username/public_html/affiliate-pro/data/recurring.php</pre></code>
+
+	</ul>
+	
+	<h2>
+		WooCommerce Specific Integration
+	</h2>
+	<ul>
+		<li><b>Step 1.</b> - Include php tracking file in <b>wp-content/themes/THEMENAME/header.php</b> (best to use full path)
+		<code><pre>include('/home/myusername/public_html/affiliate-pro/auth/affiliate-tracking.php');</pre></code></li>
+		<br>
+		
+		<li><b>Step 2.</b> - Find this line in <b>wp-content/plugins/templates/checkout/thankyou.php</b> (should be line 63)
+		<code><pre>&#60;?php do_action( 'woocommerce_thankyou', $order->id );?></pre></code>
+		After it add this:
+		<code><pre>&#60;?php $sale_amount = $order->get_total(); <br> $product = 'WC Order #: '.$order->id; <br> include('/home/myusername/public_html/affiliate-pro/auth/record-sale.php');?></pre></code>
+		
+		<br>
+		<h4>
+			That's it!  When an order is completed, it will show up in Affiliate Pro (if an affiliate has referred the sale of course).
+		</h4>
+
+	</ul>
+	<hr>
+	<h2>
+		Opencart Specific Integration
+	</h2>
+	<ul>
+		<li><b>Step 1.</b> - Include php tracking file in <b>catalog/common/header.php</b> (best to use full path)
+		<code><pre>include('/home/myusername/public_html/affiliate-pro/auth/affiliate-tracking.php');</pre></code></li>
+		<br>
+		
+		<li><b>Step 2.</b> - Find this line in <b>catalog/controller/checkout/success.php</b> (should be line 6)
+		<code><pre>if (isset($this->session->data['order_id'])) {</pre></code>
+		After it add this:
+		<code><pre>$cart_total = $this->cart->getTotal();</pre></code>
+			
+		<li><b>Step 3.</b> - Find this line in <b>catalog/controller/checkout/success.php (same file from step 2) </b> (should be line 35)
+		<code><pre>unset($this->session->data['shipping_method']);</pre></code>
+		Right <b>before</b> add this:
+		<code><pre>$sale_amount = $cart_total; <br> $product = 'OC Order #'.$this->session->data['order_id']; <br> include('/home/myusername/public_html/affiliate-pro/auth/record-sale.php');</pre></code>
+		
+		
+		<br>
+		<h4>
+			That's it!  When an order is completed, it will show up in Affiliate Pro (if an affiliate has referred the sale of course).
+		</h4>
+
+	</ul>
+	
+	<hr>
+	<h2>
+		AbanteCart Specific Integration
+	</h2>
+	<ul>
+		<li><b>Step 1.</b> - Include php tracking file in <b>storefront/index.php</b> (best to use full path)
+		<code><pre>include('/home/myusername/public_html/affiliate-pro/auth/affiliate-tracking.php');</pre></code></li>
+		<br>
+
+		<li><b>Step 2.</b> - Find this line in <b>storefront/controller/pages/checkout/success.php </b> (should be line 68)
+		<code><pre>country'=> $order_data['shipping_country']	));</pre></code>
+		Right <b>after</b> add this:
+		<code><pre>$sale_amount = $order_total; <br> $product = 'Order #'.$this->session->data['order_id']; <br> include('/home/myusername/public_html/affiliate-pro/auth/record-sale.php');</pre></code>
+		
+		
+		<br>
+		<h4>
+			That's it!  When an order is completed, it will show up in Affiliate Pro (if an affiliate has referred the sale of course).
+		</h4>
+
+	</ul>
+	<hr>
+	<h2>Leads</h2>
+	<p>Allow users to send you qualified leads and let them earn for it.  Use the example lead form demo_lead.php to generate leads.  If you need additional fields
+		you will need to modify the form of course and data/capture-lead.php
+	<hr>
+	<a name="features"></a>
+	<h2>Core Features</h2>
+
+	<ul>
+		<hr>
+		<li><b>Unlimited Affiliates</b> - Boost Sales by letting Affiliates Sale your Products for you!</li>
+		<li><b>Affiliate and Admin Panels</b> - Let Affiliates view their own stats / Control it with easy from your own admin Panel</li>
+		<li><b>Traffic Referral Stats</b> - Keep track of Affiliate Referred Traffic (landing page, ISP...)</li>
+		<li><b>Banner/Logo Sharing</b> - Upload your banners and logos to give your Affiliate quick access to your marketing materials</li>
+		<li><b>Commission Levels</b> - Set Commission earning % based on Affiliates level of total sales</li>
+		<li><b>Track Sales / Profits</b> - Manage all affiliate sold products and earnings with simplicity</li>
+		<li><b>Manage Payouts</b> - Let your affiliates request payouts.  Manage these requests with ease from your admin panel</li>
+		<li><b>Date Filter</b> - Filter any of the Data based on the Period you want (for example the last 30 days)</li>
+		<li><b>Quick View Dashboard</b> - View Top Affiliate Preformers, recent sales, traffic on one page</li>
+		<li><b>View by Affiliate</b> - Zone in and view Sales and Traffic Referral data by Individual Affiliate</li>
+		<li><b>Void Transactions</b> - Void any transactions if you feel it is appropriate (i.e. refund issued to buyer)</li>
+		<li><b>Balance Management</b> - Tracks Affiliates Balance (amount owed), if transactions are voided their balance is updated</li>
+		<li><b>Lots of other Great Features!</b> - View Top Affiliate Preformers, recent sales, traffic on one page</li>
+		
+	
+	</ul>
+
+	<hr>
+	<a name="account"></a>
+	<h2>Default Account</h2>
+	<p>
+		By default your first user is the demo account user.  Username: demo Password: pass
+		You can register your own users and make them an admin through the user management panel (located in the top right dropdown) by changing the select dropdown.
+		Once your new user is ready, go ahead and delete the demo user if you want.
+	</p>
+	<hr>
+	<h2>Multiliqual Support</h2>
+	<p>
+		By default the language is set to English.  You can use the selector in the top right corner to change languages as well.  If you want to change the default
+		language just open auth>startup.php and change line 34 to your two letter language code.  If the language file doesn't exist yet, create your own easily by
+		cloning lang>en.php and rename it with the new country code.  Go through the file and make the necessary edits.  If you wish to add it to the lanaguage selection
+		dropdown for users simply go to assets>comp>top-nav.php and copy line 25.  Paste it below and change en to the appropraite new language code you just created.  It
+		might sound like a lot, but really you can create another language for Affiliate Pro in just a couple minutes!
+	</p>
+	<hr>
+	<h2>Multi-Currency Formatting</h2>
+	<p>
+		By default the currency is set to USD.  You can use the selector in the top right corner to change currencies as well.  If you want to change the default
+		currency just open auth>db-connect.php and change line 23 to your currency code.  If you wish to add currency selection
+		dropdown for users simply go to assets>comp>top-nav.php and copy line 51.  Paste it below and change en-US to the appropraite new currency code you just created.
+	</p>
+	<hr>
+	<a name="credits"></a>
+	<h2>Plugin Credits</h2>
+	<p>
+		We would like to say thanks to these great plugins that are used in Affiliate Pro.  If we've missed anything, please let us know so we can apply proper credit here.
+	</p>
+	<ul>
+		<li>Datatables https://www.datatables.net/</li>
+		<li>Sweet Alert http://t4t5.github.io/sweetalert/</li>
+		<li>Password_compat https://github.com/ircmaxell/password_compat</li>
+	</ul>
+
+	<hr>
+	<h2>Support</h2>
+
+	<p>
+		You can reach our support through the CodeCanyon comment section or email me at joshua@jdwebdesigner.com
+	</p>
+
+	<h2>Thanks again and hope you enjoy Affiliate Pro</h2>
+
+	<br>
+	<br>
+	<br>
+	<Br>
+	<br>
+	<br>
+	<br>
+	<Br>
+</div>
+</div>
+
+</div>
+<!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/tree.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
