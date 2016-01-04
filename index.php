@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 include('auth/register.inc.php'); 
 include('data/data-functions.php');
 //SITE SETTINGS
