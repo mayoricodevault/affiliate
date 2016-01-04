@@ -16,11 +16,11 @@ if (isset($_POST['email'], $_POST['p'])) {
 	if (login($email, $password, $mysqli) == true) {
 		
         // Login success 
-		header('Location: ../dashboard');
+		header('Location: dashboard');
 		
     } else {
         // Login failed 
-        header('Location: ../login?error=1');
+        header('Location: login?error=1');
     }
 
 	}else{
