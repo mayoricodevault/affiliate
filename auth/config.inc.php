@@ -13,7 +13,7 @@ $DOMAIN = $_SERVER['SERVER_NAME'];
 //SET TO THE NAME OF THE FOLDER YOUR INSTALLATION IS INSIDE
 $INSTALL_FOLDER = '';
 //URL WHERE YOU WILL GENERALLY WANT AFFILIATES TO SEND TRAFFIC TO
-$main_url = 'http://jdwebdesigner.com';
+$main_url = 'http://applabhub.com';
 $domain_path = $DOMAIN.'/'.$INSTALL_FOLDER;
 
 error_reporting(0);
