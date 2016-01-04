@@ -4,6 +4,9 @@ include_once 'config.inc.php';   // As functions.php is not included
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
 /* determine our thread id */
 $thread_id = $mysqli->thread_id;
+$get_dc = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT default_commission FROM ap_settings"));
+print_r($get_dc);
+
 define('DEBUG', false);
 
 if(DEBUG == true)
