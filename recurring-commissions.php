@@ -81,7 +81,7 @@ if($admin_user!='1'){header('Location: dashboard');}
 								<strong>Recurring commissions are initialized the same way fixed commissions are with the addition of the two recurring variables below: </strong>
 								<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br><strong>$recurring = 'monthly';</strong> //can be daily, weekly, biweekly, or monthly<br><strong>$recurring_fee = '10';</strong> //percentage of original sale<br>include('affiliate-pro/controller/record-sale.php);</pre></code>
 								<strong>Important: Recurring commissions requires you to setup the following cron job to work.</strong>
-								<code><pre>0  1  *  *  *  /usr/bin/php -q /home/username/public_html/affiliate-pro/data/recurring.php</pre></code>
+								<code><pre>0  1  *  *  *  /usr/bin/php -q /home/forge/applabhub.com/data/recurring.php</pre></code>
 							</div>
 						</div>
 					</div>

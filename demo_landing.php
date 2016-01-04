@@ -77,7 +77,7 @@
 			<form method="post" action="demo_landing">
 				<input type="hidden" name="delete" value="1">
 				<input type="submit" class="btn btn-default" value="Clear Affiliate ID"> - You can then set your own 
-				<a href="http://jdwebdesigner.com/affiliate-pro-demo/demo_landing?ref=12">(for example: http://jdwebdesigner.com/affiliate-pro-demo/demo_landing?ref=12)</a>
+				<a href="http://applabhub.com/affiliate-pro-demo/demo_landing?ref=12">(for example: http://jdwebdesigner.com/affiliate-pro-demo/demo_landing?ref=12)</a>
 			</form>
 			
         </header>

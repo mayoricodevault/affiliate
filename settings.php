@@ -82,16 +82,16 @@ if($admin_user!='1'){header('Location: dashboard');}
 							<div class="panel-content">
 								<div>
 									<h3><?php echo $lang['STEP_1'];?></h3> 
-									<code><pre>include('affiliate-pro/controller/affiliate-tracking.php);</pre></code>
+									<code><pre>include('controller/affiliate-tracking.php);</pre></code>
 									* File located in affiliate-pro/controller/affiliate-tracking by default.
 									
 									<h3><?php echo $lang['STEP_2'];?></h3> 
-									<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br>include('affiliate-pro/controller/record-sale.php);</pre></code>
+									<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br>include('controller/record-sale.php);</pre></code>
 									* File located in affiliate-pro/controller/record-sale by default
 									
 									<h3><?php echo $lang['STEP_3'];?></h3> 
 									If you want to use PayPal IPN - You can use the sample PayPal IPN file located in affiliate-pro/controller/paypal-ipn.php for additional purchase confirmation security (optional)
-									<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br>include('affiliate-pro/controller/<b>ipn-</b>record-sale.php);</pre></code>
+									<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br>include('controller/<b>ipn-</b>record-sale.php);</pre></code>
 									
 								</div>
 								

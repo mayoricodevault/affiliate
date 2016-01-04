@@ -81,7 +81,7 @@ include('controller/record-sale.php');
 				- Refreshing this page will not create another sale
 				</H3>
 			</h1>
-			<p><a href="http://jdwebdesigner.com/affiliate-pro-demo">Login to the affiliate panel</a> to view the transaction.</p>
+			<p><a href="http://applabhub.com/affiliate-pro-demo">Login to the affiliate panel</a> to view the transaction.</p>
 			
         </header>
 

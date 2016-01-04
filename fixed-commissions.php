@@ -78,7 +78,7 @@ if($admin_user!='1'){header('Location: dashboard');}
 								</form>
 								<hr>
 								<strong>To override the default commission rate or other commission rates add the commission variable to your integration</strong>
-								<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br><strong>$commission = '10';</strong> //percentage of original sale<br>include('affiliate-pro/controller/record-sale.php);</pre></code>
+								<code><pre>$sale_amount = '21.98';<br>$product = 'My Product Description';<br><strong>$commission = '10';</strong> //percentage of original sale<br>include('controller/record-sale.php);</pre></code>
 								
 							</div>
 						</div>
