@@ -4,7 +4,7 @@ include_once 'config.inc.php';   // As functions.php is not included
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
 /* determine our thread id */
 $thread_id = $mysqli->thread_id;
-define('DEBUG', false);
+define('DEBUG', true);
 
 if(DEBUG == true)
 {
