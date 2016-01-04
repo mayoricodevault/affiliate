@@ -40,9 +40,9 @@ list($meta_title, $meta_description, $site_title, $site_email) = all_settings();
     <div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<a class="navbar-brand" href="#">
-             <img src="assets/img/aplogo.png">
-          </a>
+<!--					<a class="navbar-brand" href="#">-->
+<!--             <img src="assets/img/aplogo.png">-->
+<!--          </a>-->
 				</div>
 			</div>
         <div class="row">

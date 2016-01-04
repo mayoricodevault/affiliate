@@ -46,9 +46,9 @@ list($meta_title, $meta_description, $site_title, $site_email) = all_settings();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                   	<img src="assets/img/aplogo.png" style="padding-bottom:20px;">
-                </a>
+<!--                <a class="navbar-brand" href="#">-->
+<!--                   	<img src="assets/img/aplogo.png" style="padding-bottom:20px;">-->
+<!--                </a>-->
             </div>
            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -45,7 +45,8 @@ list($meta_title, $meta_description, $site_title, $site_email) = all_settings();
                 <form method="post" action="access/forgot" class="form-horizontal login-form">
 								<fieldset>
 									
-									<img src="assets/img/aplogo.png" style="width:50%;"><br>
+<!--									<img src="assets/img/aplogo.png" style="width:50%;">-->
+									<br>
 											<?php if($_GET['success']=='1'){
 													echo '<span class="success-text">Reset instructions have been sent to your email</span>';
 											} 

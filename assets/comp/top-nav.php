@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 		<!-- Logo -->
 		<div class="logo">
-			<a href="dashboard"> <img src="//<?php echo $domain_path;?>/assets/img/aplogo2.png">
-			</a>
+<!--			<a href="dashboard"> <img src="//--><?php //echo $domain_path;?><!--/assets/img/aplogo2.png">-->
+<!--			</a>-->
 		</div>
 		<!-- End Logo -->
 		<div id="navbar">

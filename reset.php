@@ -45,7 +45,8 @@ list($meta_title, $meta_description, $site_title, $site_email) = all_settings();
                 <form method="post" action="data/reset-password" class="form-horizontal login-form">
 								<fieldset>
 									<input type="hidden" name="key" value="<?php $key = filter_input(INPUT_GET, 'k', FILTER_SANITIZE_STRING); echo $key; ?>">
-									<img src="assets/img/aplogo.png" style="width:50%;"><br>
+<!--									<img src="assets/img/aplogo.png" style="width:50%;">-->
+									<br>
 											<?php 
 											if($_GET['error']=='1'){
 													echo '<span class="red">New password and Confirm password do not match</span>';
