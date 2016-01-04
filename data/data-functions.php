@@ -13,7 +13,7 @@ function admin_control($admin_user, $lang_u, $lang_a){
 }
 
 function avatar($userid){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_email = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT email FROM ap_members WHERE id=$userid"));
 	$email = $get_email['email'];
 	//GRAVATAR IMAGE URL
@@ -23,7 +23,7 @@ function avatar($userid){
 }
 
 function balance($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_balance= mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT balance FROM ap_members WHERE id=$owner"));
 	$balance = $get_balance['balance'];
 	$money_format = new \NumberFormatter($locale, \NumberFormatter::CURRENCY); 
@@ -43,7 +43,7 @@ function profile_name($owner){
 }
 
 function profile_img($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_profile = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT avatar FROM ap_members WHERE id=$owner"));
 	if($get_profile['avatar']==''){
 		//GRAVATAR IMAGE URL
@@ -55,8 +55,8 @@ function profile_img($owner){
 }
 
 function profile_details($owner){
-	include('../auth/db-connect.php');
-	include('../lang/'.$_SESSION['language'].'.php');
+	include('auth/db-connect.php');
+	include('lang/'.$_SESSION['language'].'.php');
 	$get_profile = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT fullname, email, username FROM ap_members WHERE id=$owner"));
 	$profile_name = $get_profile['fullname'];
 	$profile_email = $get_profile['email'];
@@ -73,14 +73,14 @@ function profile_details($owner){
 	AFFILIATES FUNCTION 
    ========================================= */
 function affiliate_name($affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_profile = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT fullname FROM ap_members WHERE id=$affiliate_filter"));
 	$name = $get_profile['fullname'];
 	echo ucwords($name);
 }
 
 function affiliates_table(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_members WHERE admin_user!=1 ORDER BY id DESC";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -124,7 +124,7 @@ function affiliates_table(){
 }
 
 function top_affiliates_table(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$limit = '4';
 	$i = '0';
 	$query = "SELECT affiliate_id, COUNT(*) as count FROM ap_earnings GROUP BY affiliate_id ORDER BY count DESC;";
@@ -164,7 +164,7 @@ function top_affiliates_table(){
 }
 
 function top_affiliates_list(){
-include('../auth/db-connect.php');
+include('auth/db-connect.php');
 	$limit = '5';
 	$i = '0';
 	$query = "SELECT affiliate_id, COUNT(*) as count FROM ap_earnings GROUP BY affiliate_id ORDER BY count DESC";
@@ -197,7 +197,7 @@ include('../auth/db-connect.php');
 	REFERRAL TRAFFIC FUNCTIONS
    ========================================= */
 function referral_table($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -253,7 +253,7 @@ function referral_table($start_date, $end_date, $affiliate_filter){
 }
 
 function top_url_referral_table($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -277,7 +277,7 @@ function top_url_referral_table($start_date, $end_date, $affiliate_filter){
 }
 
 function top_referring_affiliates($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -313,7 +313,7 @@ function top_referring_affiliates($start_date, $end_date, $affiliate_filter){
 }
 
 function my_referral_table($start_date, $end_date, $owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -350,7 +350,7 @@ function my_referral_table($start_date, $end_date, $owner){
 }
 
 function recent_referrals($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 
 	$query = "SELECT * FROM ap_referral_traffic WHERE affiliate_id=$owner ORDER BY datetime DESC LIMIT 0, 4";
 	$query = $mysqli->real_escape_string($query);
@@ -448,7 +448,7 @@ function sales_table($start_date, $end_date, $affiliate_filter){
 }
 
 function recurring_sales_table($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -546,7 +546,7 @@ function recurring_sales_table($start_date, $end_date, $affiliate_filter){
 }
 
 function my_recurring_sales_table($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -622,7 +622,7 @@ function my_recurring_sales_table($start_date, $end_date, $affiliate_filter){
 }
 
 function my_sales_table($start_date, $end_date, $owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -666,7 +666,7 @@ function my_sales_table($start_date, $end_date, $owner){
 }
 
 function recurring_history_table(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_recurring_history ORDER by id DESC";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -694,7 +694,7 @@ function recurring_history_table(){
 }
 
 function recent_sales_table(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_earnings ORDER by datetime DESC LIMIT 0, 15";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -739,7 +739,7 @@ function recent_sales_table(){
 }
 
 function my_recent_sales_table($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_earnings WHERE affiliate_id=$owner ORDER by datetime DESC LIMIT 0, 15";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -824,7 +824,7 @@ function leads_table(){
 }
 
 function my_leads_table($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_leads WHERE affiliate_id=$owner ORDER BY id DESC";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -849,7 +849,7 @@ function my_leads_table($owner){
 	BANNERS FUNCTIONS
    ========================================= */
 function banner_table($owner, $domain_path, $main_url, $admin_user){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_banners ORDER BY id DESC";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -881,7 +881,7 @@ function banner_table($owner, $domain_path, $main_url, $admin_user){
 	COMMISSION FUNCTIONS
    ========================================= */
 function commission_table($owner, $domain_path, $main_url){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_commission_settings ORDER BY sales_from DESC";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -907,7 +907,7 @@ function commission_table($owner, $domain_path, $main_url){
 }
 
 function highest_level(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_max = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT MAX(sales_to) as max FROM ap_commission_settings"));
 	$max = $get_max['max'];
 	echo $max;
@@ -928,49 +928,49 @@ function default_commission(){
 }
 
 function cpc_on(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_cpc = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT cpc_on FROM ap_other_commissions WHERE id=1"));
 	$cpc_on = $get_cpc['cpc_on'];
 	return $cpc_on;
 }
 
 function lc_on(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_lc = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT lc_on FROM ap_other_commissions WHERE id=1"));
 	$lc_on = $get_lc['lc_on'];
 	return $lc_on;
 }
 
 function epc(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_epc = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT epc FROM ap_other_commissions WHERE id=1"));
 	$epc = $get_epc['epc'];
 	echo $epc;
 }
 
 function epl(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_epc = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT epl FROM ap_other_commissions WHERE id=1"));
 	$epl = $get_epc['epl'];
 	echo $epl;
 }
 
 function rc_on(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_rc = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT rc_on FROM ap_other_commissions WHERE id=1"));
 	$rc_on = $get_rc['rc_on'];
 	return $rc_on;
 }
 
 function sv_on(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_sv = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT sv_on FROM ap_other_commissions WHERE id=1"));
 	$sv_on = $get_sv['sv_on'];
 	return $sv_on;
 }
 
 function mt_on(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_mt = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT mt_on FROM ap_other_commissions WHERE id=1"));
 	$mt_on = $get_mt['mt_on'];
 	return $mt_on;
@@ -979,7 +979,7 @@ function mt_on(){
 	PAYOUT FUNCTIONS
    ========================================= */
 function payout_table($start_date, $end_date){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1045,7 +1045,7 @@ function payout_table($start_date, $end_date){
 }
 
 function my_payout_table($start_date, $end_date, $owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1091,7 +1091,7 @@ function my_payout_table($start_date, $end_date, $owner){
 }
 
 function available_payment(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_settings WHERE id=1";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -1108,7 +1108,7 @@ function available_payment(){
 }
 
 function payouts_additional($payout_id){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$query = "SELECT * FROM ap_payouts WHERE id=$payout_id";
 	$query = $mysqli->real_escape_string($query);
 		if($result = $mysqli->query($query)){
@@ -1136,7 +1136,7 @@ function payouts_additional($payout_id){
 	MULTI-TIERS FUNCTION 
    ========================================= */
 function tier_levels(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tiers = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT * FROM ap_other_commissions"));
 	$tier2 = $get_tiers['tier2']; $tier3 = $get_tiers['tier3']; $tier4 = $get_tiers['tier4']; 
 	$tier5 = $get_tiers['tier5']; $tier6 = $get_tiers['tier6']; $tier7 = $get_tiers['tier7'];
@@ -1154,7 +1154,7 @@ function tier_levels(){
 }
 
 function mt_table($start_date, $end_date){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1180,7 +1180,7 @@ function mt_table($start_date, $end_date){
 }
 
 function mt_payments_table($transaction_id){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	
 	$query = "SELECT * FROM ap_multi_tier_transactions WHERE transaction_id=$transaction_id ORDER BY id ASC";
 	$query = $mysqli->real_escape_string($query);
@@ -1220,7 +1220,7 @@ function mt_payments_table($transaction_id){
 }
 
 function my_mt_payments_table($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	
 	$query = "SELECT * FROM ap_multi_tier_transactions WHERE affiliate_id=$owner ORDER BY id ASC";
 	$query = $mysqli->real_escape_string($query);
@@ -1250,7 +1250,7 @@ function my_mt_payments_table($owner){
    ========================================= */
 
 function total_leads(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$sql = "SELECT * FROM ap_leads";
 	$result = $mysqli->query($sql);
 	$num_affiliates = $result->num_rows;
@@ -1259,7 +1259,7 @@ function total_leads(){
 }
 
 function total_lead_conversions(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$sql = "SELECT * FROM ap_leads WHERE converted=1";
 	$result = $mysqli->query($sql);
 	$num_affiliates = $result->num_rows;
@@ -1268,7 +1268,7 @@ function total_lead_conversions(){
 }
 
 function total_leads_i($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$sql = "SELECT * FROM ap_leads WHERE affiliate_id=$owner";
 	$result = $mysqli->query($sql);
 	$num_affiliates = $result->num_rows;
@@ -1277,7 +1277,7 @@ function total_leads_i($owner){
 }
 
 function total_lead_conversions_i($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$sql = "SELECT * FROM ap_leads WHERE affiliate_id=$owner AND converted=1";
 	$result = $mysqli->query($sql);
 	$num_affiliates = $result->num_rows;
@@ -1286,7 +1286,7 @@ function total_lead_conversions_i($owner){
 }
 
 function total_affiliate_lead_earnings(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT SUM(epl) as total_balance FROM ap_leads"));
 	$tb = $get_tb['total_balance'];
 	if($tb==''){$tb='0.00';}
@@ -1296,7 +1296,7 @@ function total_affiliate_lead_earnings(){
 }
 
 function total_affiliate_lead_earnings_i($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT SUM(epl) as total_balance FROM ap_leads WHERE affiliate_id=$owner"));
 	$tb = $get_tb['total_balance'];
 	if($tb==''){$tb='0.00';}
@@ -1306,7 +1306,7 @@ function total_affiliate_lead_earnings_i($owner){
 }
 
 function total_affiliates(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$sql = "SELECT * FROM ap_members WHERE admin_user!=1";
 	$result = $mysqli->query($sql);
 	$num_affiliates = $result->num_rows;
@@ -1314,7 +1314,7 @@ function total_affiliates(){
 }
 
 function total_balance(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT SUM(balance) as total_balance FROM ap_members WHERE admin_user!=1"));
 	$tb = $get_tb['total_balance'];
 	if($tb==''){$tb='0.00';}
@@ -1324,7 +1324,7 @@ function total_balance(){
 }
 
 function total_sales(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT SUM(sale_amount) as total_sales FROM ap_earnings WHERE void!=1"));
 	$tb = $get_tb['total_sales'];
 	if($tb==''){$tb='0.00';}
@@ -1344,7 +1344,7 @@ function my_total_sales($owner){
 }
 
 function count_sales(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT COUNT(id) as total_sales FROM ap_earnings WHERE void!=1"));
 	$tb = $get_tb['total_sales'];
 	if($tb==''){$tb='0';}
@@ -1352,7 +1352,7 @@ function count_sales(){
 }
 
 function my_count_sales($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT COUNT(id) as total_sales FROM ap_earnings WHERE affiliate_id=$owner AND void!=1"));
 	$tb = $get_tb['total_sales'];
 	if($tb==''){$tb='0';}
@@ -1360,7 +1360,7 @@ function my_count_sales($owner){
 }
 
 function total_sales_period($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1375,7 +1375,7 @@ function total_sales_period($start_date, $end_date, $affiliate_filter){
 }
 
 function total_sales_period_i($start_date, $end_date, $owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1389,7 +1389,7 @@ function total_sales_period_i($start_date, $end_date, $owner){
 }
 
 function affiliate_earnings(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT SUM(net_earnings) as affiliate_earnings FROM ap_earnings WHERE void!=1"));
 	$ae = $get_tb['affiliate_earnings'];
 	$get_tb = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT SUM(recurring_earnings) as recurring_earnings FROM ap_recurring_history"));
@@ -1404,7 +1404,7 @@ function affiliate_earnings(){
 }
 
 function affiliate_earnings_period($start_date, $end_date, $affiliate_filter){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1422,7 +1422,7 @@ function affiliate_earnings_period($start_date, $end_date, $affiliate_filter){
 }
 
 function affiliate_earnings_period_i($start_date, $end_date, $owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1436,7 +1436,7 @@ function affiliate_earnings_period_i($start_date, $end_date, $owner){
 }
 
 function total_recurring(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tr = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT COUNT(id) as total_recurring FROM ap_earnings WHERE stop_recurring=0 AND recurring_fee > 0"));
 	$tr = $get_tr['total_recurring'];
 	if($tr==''){$tr='0';}
@@ -1444,7 +1444,7 @@ function total_recurring(){
 }
 
 function total_recurring_i($owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tr = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT COUNT(id) as total_recurring FROM ap_earnings WHERE affiliate_id=$owner AND stop_recurring=0 AND recurring_fee > 0"));
 	$tr = $get_tr['total_recurring'];
 	if($tr==''){$tr='0';}
@@ -1452,7 +1452,7 @@ function total_recurring_i($owner){
 }
 
 function total_recurring_sales_period($start_date, $end_date){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1466,7 +1466,7 @@ function total_recurring_sales_period($start_date, $end_date){
 }
 
 function total_recurring_sales_period_i($start_date, $end_date, $owner){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$start_date = $start_date.'000000';
 	$end_date = $end_date.'235959';
 	$start_date = str_replace("-", "", $start_date);
@@ -1480,7 +1480,7 @@ function total_recurring_sales_period_i($start_date, $end_date, $owner){
 }
 
 function total_referrals(){
-	include('../auth/db-connect.php');
+	include('auth/db-connect.php');
 	$get_tr = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT COUNT(id) as total_referrals FROM ap_referral_traffic"));
 	$tr = $get_tr['total_referrals'];
 	if($tr==''){$tr='0';}
